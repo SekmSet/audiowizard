@@ -1,22 +1,25 @@
 import React from 'react'
-import { useHistory, Link } from "react-router-dom";
-import { Button } from 'react-bootstrap';
+import { useHistory } from "react-router-dom";
+import {Navbar, Form, Button} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function Header() {
     const history = useHistory();
 
-    const handleAccount = () => {
+    const redirectSubmit = () => {
         history.push('/account');
     }
 
     return (
         <header>
-            <div className="title_audiowizard">
-                <Link to="/"><img src={'http://localhost:3000/Audio_Wizard.png'} alt="logo home AudioWizard"/></Link>
-            </div>
-
-            <Button variant="dark" onClick={handleAccount}>Mon compte</Button>
+            <Navbar bg="light" variant="light">
+                <Navbar.Brand href="/">AudioWizard</Navbar.Brand>
+                <Navbar.Collapse>
+                    <Form inline>
+                        <Button onClick={redirectSubmit} variant="outline-success">Mon compte</Button>
+                    </Form>
+                </Navbar.Collapse>
+            </Navbar>
         </header>
     )
 }
