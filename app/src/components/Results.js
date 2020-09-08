@@ -1,15 +1,24 @@
 import React, {useContext} from 'react';
-import AppContext from '../context/context';
+import AppContext from '../context/AppContext';
+import {Card} from "react-bootstrap";
 
 function Results(){
     const {lastName, firstName, gender } = useContext(AppContext);
-console.log(gender)
+
     return (
         <div>
-            <h2>Votre résultat : </h2>
-            {gender === "Homme" && 'Monsieur '}
-            {gender === "Femme" && 'Madame '}
-            {firstName} {lastName}
+            <Card
+                bg="dark"
+                text= 'light'
+                className="mb-2"
+            >
+                <Card.Header>Votre résultat :</Card.Header>
+                <Card.Body>
+                    <Card.Text>
+                        {gender === "Homme" ? 'Monsieur' : 'Madame'} {firstName} {lastName}
+                    </Card.Text>
+                </Card.Body>
+            </Card>
         </div>
     )
 }
