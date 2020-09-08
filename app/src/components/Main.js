@@ -2,10 +2,10 @@ import React from 'react'
 import {Route, Switch} from "react-router-dom";
 import {Col, Row} from "react-bootstrap";
 
-import Home from "./Home";
-import Account from "./Account";
-import Test from "./Test";
-import Results from "./Results";
+import Home from "./Pages/Home";
+import Account from "./Pages/Account";
+import Test from "./Pages/Test";
+import Results from "./Pages/Results";
 
 function Main() {
     return (
