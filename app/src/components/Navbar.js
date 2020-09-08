@@ -1,19 +1,19 @@
 import React from 'react'
-import {Link} from "react-router-dom";
+import {NavLink} from "react-router-dom";
 import {Col, ListGroup} from "react-bootstrap";
 
 function Navbar() {
     return (
         <Col md={3}>
-            <ListGroup>
-                <ListGroup.Item className="nav-item">
-                    <Link className="nav-link active" to="/">Accueil</Link>
+            <ListGroup as="ul">
+                <ListGroup.Item className="nav-item" as="li">
+                    <NavLink className="nav-link" to="/" exact>Accueil</NavLink>
                 </ListGroup.Item>
-                <ListGroup.Item className="nav-item">
-                    <Link className="nav-link active" to="/test">Commencez votre test</Link>
+                <ListGroup.Item className="nav-item" as="li">
+                    <NavLink className="nav-link" to="/test" exact>Commencez votre test</NavLink>
                 </ListGroup.Item>
-                <ListGroup.Item className="nav-item">
-                    <Link className="nav-link active" to="/account">Compte</Link>
+                <ListGroup.Item className="nav-item" as="li">
+                    <NavLink className="nav-link" to="/account" exact>Compte</NavLink>
                 </ListGroup.Item>
             </ListGroup>
         </Col>
