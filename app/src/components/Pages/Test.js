@@ -3,8 +3,8 @@ import {useForm} from "react-hook-form";
 import { Button } from 'react-bootstrap';
 import classNames from "classnames";
 
-import AppContext from '../context/AppContext';
-import Stepper from "./Stepper";
+import AppContext from '../../context/AppContext';
+import Stepper from "../Stepper";
 
 const Homme = 'Homme';
 const Femme = 'Femme';
