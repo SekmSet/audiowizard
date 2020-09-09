@@ -41,7 +41,7 @@ function Header() {
                     {username &&
                         <>
                             <Form inline>
-                                <Button  variant="outline-info">username</Button>
+                                <Button onClick={redirectSubmit} variant="outline-info">username</Button>
                             </Form>
                             <Form inline>
                                 <Button onClick={logoutSubmit} variant="outline-dark">Déconnexion</Button>
