@@ -2,8 +2,10 @@ import React from "react";
 import {
     BrowserRouter as Router,
 } from "react-router-dom";
-import 'bootstrap/dist/css/bootstrap.min.css';
 import {Container, Row} from "react-bootstrap";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
 import Header from './components/Header';
@@ -28,6 +30,17 @@ function App() {
                         </Container>
                     </div>
                 </Router>
+                <ToastContainer
+                    position="top-center"
+                    autoClose={5000}
+                    hideProgressBar={false}
+                    newestOnTop={false}
+                    closeOnClick
+                    rtl={false}
+                    pauseOnFocusLoss
+                    draggable
+                    pauseOnHover
+                />
             </AppProvider>
         </UserProvider>
     );

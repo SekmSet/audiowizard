@@ -3,16 +3,26 @@ import { useForm } from "react-hook-form";
 import {Button} from "react-bootstrap";
 import UserContext from '../../context/UserContext';
 import {useHistory} from "react-router-dom";
+import {toast} from "react-toastify";
 
 function Account() {
 
     const { handleSubmit, register, errors } = useForm();
-    const { setUsername } = useContext(UserContext);
+    const { setUsername, username } = useContext(UserContext);
     const history = useHistory();
 
     const onSubmit = values => {
         console.log(values)
         setUsername(values.username);
+        toast.info(`🦄 ${values.username} tu es connecté !`, {
+            position: "top-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+        });
         history.push('/')
     };
 
