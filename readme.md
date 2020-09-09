@@ -24,5 +24,7 @@ npm start
 ## Links 
 
 [Prettier](https://prettier.io/)
+
 [React hook form](https://react-hook-form.com/)
+
 [React toastify](https://github.com/fkhadra/react-toastify)
