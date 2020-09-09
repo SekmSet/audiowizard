@@ -1,11 +1,20 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import { useForm } from "react-hook-form";
 import {Button} from "react-bootstrap";
+import UserContext from '../../context/UserContext';
+import {useHistory} from "react-router-dom";
 
 function Account() {
 
     const { handleSubmit, register, errors } = useForm();
-    const onSubmit = values => console.log(values);
+    const { setUsername } = useContext(UserContext);
+    const history = useHistory();
+
+    const onSubmit = values => {
+        console.log(values)
+        setUsername(values.username);
+        history.push('/')
+    };
 
     return (
         <div className='container'>

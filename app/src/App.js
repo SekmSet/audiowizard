@@ -11,22 +11,25 @@ import Main from './components/Main';
 import Navbar from './components/Navbar';
 
 import {AppProvider} from "./context/AppContext";
+import {UserProvider} from "./context/UserContext";
 
 function App() {
     return (
-        <AppProvider>
-            <Router>
-                <div>
-                    <Header />
-                    <Container fluid>
-                        <Row>
-                            <Navbar />
-                            <Main />
-                        </Row>
-                    </Container>
-                </div>
-            </Router>
-        </AppProvider>
+        <UserProvider>
+            <AppProvider>
+                <Router>
+                    <div>
+                        <Header />
+                        <Container fluid>
+                            <Row>
+                                <Navbar />
+                                <Main />
+                            </Row>
+                        </Container>
+                    </div>
+                </Router>
+            </AppProvider>
+        </UserProvider>
     );
 }
 
