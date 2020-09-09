@@ -8,7 +8,7 @@ import {toast} from "react-toastify";
 function Account() {
 
     const { handleSubmit, register, errors } = useForm();
-    const { setUsername, username } = useContext(UserContext);
+    const { setUsername } = useContext(UserContext);
     const history = useHistory();
 
     const onSubmit = values => {

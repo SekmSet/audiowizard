@@ -1,13 +1,16 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import {Route, Switch} from "react-router-dom";
 import {Col, Row} from "react-bootstrap";
-
 import Home from "./Pages/Home";
 import Account from "./Pages/Account";
 import Test from "./Pages/Test";
 import Results from "./Pages/Results";
+import Profil from "./Pages/Profil";
+import UserContext from "../context/UserContext";
 
 function Main() {
+    const { username } = useContext(UserContext);
+
     return (
         <Col md={9}>
             <Row className="justify-content-md-center">
@@ -17,9 +20,18 @@ function Main() {
                             <Home />
                         </Route>
 
-                        <Route path='/account'>
-                            <Account />
-                        </Route>
+                        {!username &&
+                            <Route path='/account'>
+                                {username ?<Account />:<Profil /> }
+                                <Account />
+                            </Route>
+                        }
+
+                        {username &&
+                            <Route path='/account'>
+                                <Profil />
+                            </Route>
+                        }
 
                         <Route path='/test'>
                             <Test />
